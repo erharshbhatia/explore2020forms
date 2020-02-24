@@ -3,288 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./theglitterfeetform.css">
+    <link rel="stylesheet" href="./form.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Glitter Feet</title>
+    <title>Document</title>
+    <style>
+        .members{
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
-    <script>
-        $(document).ready(function(){
-    $("select#no-of-team-members").change(function(){
-        var selected = $(this).children("option:selected").val();
-        var i=1,max=15;
-        for(i=1;i<=selected;i++){
-            $("."+i).css("display","block");
-        }
-        for(j=i;j<max;j++){
-            $("."+j).css("display","none");
-        }
-    });
-});
-    </script>
     <div class="form_wrapper">
         <div class="form_container">
             <div class="title_container">
-                <h2>The Glitter Feet Registration Form</h2>
+                <h2>Mr. & Ms. Explore Registration Form</h2>
             </div>
             <div class="row clearfix">
                 <div class="">
-                    <form id="resetForm" method="GET" action="thankyou.html" onsubmit="insert_value() ">
-                        <label for="team-name">Enter Team Name</label>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="team-name" type="text" placeholder="Team Name" name="team_name" />
-                        </div>
-                        <label for="email">Enter Email</label>
+                    <form name="submit-to-google-sheet">
+                        <label for="email">Your Email</label>
                         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input id="email" type="email" placeholder="Email" />
+                            <input id="email" name="email" type="email" placeholder="Enter Email" />
                         </div>
-                        <label for="alt-email">Enter Alternative Email</label>
+                        <label for="contact">Your  Contact</label>
                         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input id="alt-email" type="email" placeholder="Alternative Email" />
+                            <input id="contact" name="contact" type="text" placeholder="Enter Contact Number" />
                         </div>
-                        <label for="contact">Enter Contact</label>
+                        <label for="alt-contact">Your  Alternative Contact</label>
                         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input id="contact" type="text" placeholder="Contact Number" />
-                        </div>
-                        <label for="alt-contact">Enter Contact</label>
-                        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                            <input id="alt-contact" type="text" placeholder="Alternative Contact Number" />
+                            <input id="alt-contact" name="alt-contact" type="text"
+                                placeholder="Enter Alternative Contact Number" />
                         </div>
                         <div class="input_field select_option">
-                            <select id="campus" required>
+                            <select id="campus" name="campus" required>
                                 <option value="">Choose Campus</option>
-                                <option>Punjab(Rajpura)</option>
-                                <option>Himachal Pradesh(Baddi)</option>
+                                <option value="punjab">Punjab(Rajpura)</option>
+                                <option value="himachal">Himachal Pradesh(Baddi)</option>
                             </select>
                             <div class="select_arrow"></div>
                         </div>
-                        <div class="input_field select_option">
-                            <select id="no-of-team-members" required>
-                                <option value=""> Select Number of Team Members</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                            </select>
-                            <div class="select_arrow"></div>
-                        </div>
-
-
-
                         
-                        <div class="input_field members 1">
-                            <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m1-name" type="text" name="entry.613238760"
-                                placeholder="Team Head Name/Member 1" />
-                        </div>
-                        <div class="input_field members 1"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m1-rollno" type="text" name="entry.1971213482"
-                                placeholder="Team Head Name/Member 1 Roll no." />
-                        </div>
-                        <div class="input_field members 1"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m1-dpt" type="text" name="entry.1882408950"
-                                placeholder="Team Head Name/Member 1 Department" />
-                        </div>
-
-                        <div class="input_field members 2"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m2-name" type="text" name="entry.1765499000" placeholder="Team Member 2 Name" />
-                        </div>
-                        <div class="input_field members 2"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m2-rollno" type="text" name="entry.317500558"
-                                placeholder="Team Member 2 Roll no." />
-                        </div>
-                        <div class="input_field members 2"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m2-dpt" type="text" name="entry.1531743080"
-                                placeholder="Team Member 2 Department" />
-                        </div>
-
-                        <div class="input_field members 3"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m3-name" type="text" name="entry.421915401" placeholder="Team Member 3 Name" />
-                        </div>
-                        <div class="input_field members 3"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m3-rollno" type="text" name="entry.255286181"
-                                placeholder="Team Member 3 Roll no." />
-                        </div>
-                        <div class="input_field members 3"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m3-dpt" type="text" name="entry.260135115"
-                                placeholder="Team Member 3 Department" />
-                        </div>
-
-                        <div class="input_field members 4"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m4-name" type="text" name="entry.238384897" placeholder="Team Member 4 Name" />
-                        </div>
-                        <div class="input_field members 4"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m4-rollno" type="text" name="entry.830531234"
-                                placeholder="Team Member 4 Roll no." />
-                        </div>
-                        <div class="input_field members 4"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m4-dpt" type="text" name="entry.537772478"
-                                placeholder="Team Member 4 Department" />
-                        </div>
-
-                        <div class="input_field members 5"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m5-name" type="text" name="entry.449731777" placeholder="Team Member 5 Name" />
-                        </div>
-                        <div class="input_field members 5"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m5-rollno" type="text" name="entry.588278723"
-                                placeholder="Team Member 5 Roll no." />
-                        </div>
-                        <div class="input_field members 5"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m5-dpt" type="text" name="entry.640788099"
-                                placeholder="Team Member 5 Department" />
-                        </div>
-
-                        <div class="input_field members 6"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m6-name" type="text" name="entry.368721261" placeholder="Team Member 6 Name" />
-                        </div>
-                        <div class="input_field members 6"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m6-rollno" type="text" name="entry.1107098433"
-                                placeholder="Team Member 6 Roll no." />
-                        </div>
-                        <div class="input_field members 6"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m6-dpt" type="text" name="entry.1746511865"
-                                placeholder="Team Member 6 Department" />
-                        </div>
-
-                        <div class="input_field members 7"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m7-name" type="text" name="entry.756223716" placeholder="Team Member 7 Name" />
-                        </div>
-                        <div class="input_field members 7"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m7-rollno" type="text" name="entry.1164239496"
-                                placeholder="Team Member 7 Roll no." />
-                        </div>
-                        <div class="input_field members 7"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m7-dpt" type="text" name="entry.2013559282"
-                                placeholder="Team Member 7 Department" />
-                        </div>
-
-                        <div class="input_field members 8"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m8-name" id="m8-name" type="text" name="entry.1510788210"
-                                placeholder="Team Member 8 Name" />
-                        </div>
-                        <div class="input_field members 8"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m8-rollno" type="text" name="entry.1933507263"
-                                placeholder="Team Member 8 Roll no." />
-                        </div>
-                        <div class="input_field members 8"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m8-dpt" type="text" name="entry.193940571"
-                                placeholder="Team Member 8 Department" />
-                        </div>
-
-                        <div class="input_field members 9"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m9-name" type="text" name="entry.1779243550" placeholder="Team Member 9 Name" />
-                        </div>
-                        <div class="input_field members 9"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m9-rollno" type="text" name="entry.1140584021"
-                                placeholder="Team Member 9 Roll no." />
-                        </div>
-                        <div class="input_field members 9"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m9-dpt" type="text" name="entry.1641125332"
-                                placeholder="Team Member 9 Department" />
-                        </div>
-
-                        <div class="input_field members 10"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m10-name" type="text" name="entry.1835198146"
-                                placeholder="Team Member 10 Name" />
-                        </div>
-                        <div class="input_field members 10"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m10-rollno" type="text" name="entry.1420664447"
-                                placeholder="Team Member 10 Roll no." />
-                        </div>
-                        <div class="input_field members 10"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m10-dpt" type="text" name="entry.1135331566"
-                                placeholder="Team Head Member 10 Department" />
-                        </div>
-
-                        <div class="input_field members 11"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m11-name" type="text" name="entry.204286534" placeholder="Team Member 11 Name" />
-                        </div>
-                        <div class="input_field members 11"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m11-rollno" type="text" name="entry.1206521894"
-                                placeholder="Team Member 11 Roll no." />
-                        </div>
-                        <div class="input_field members 11"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m11-dpt" type="text" name="entry.1913470120"
-                                placeholder="Team Member 11 Department" />
-                        </div>
-
-                        <div class="input_field members 12"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m12-name" type="text" name="entry.1561400224"
-                                placeholder="Team Member 12 Name" />
-                        </div>
-                        <div class="input_field members 12"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m12-rollno" type="text" name="entry.128115850"
-                                placeholder="Team Member 12 Roll no." />
-                        </div>
-                        <div class="input_field members 12"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m12-dpt" type="text" name="entry.645955763"
-                                placeholder="Team Member 12 Department" />
-                        </div>
-
-                        <div class="input_field members 13"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m13-name" type="text" name="entry.1644871524"
-                                placeholder="Team Member 13 Name" />
-                        </div>
-                        <div class="input_field members 13"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m13-rollno" type="text" name="entry.103309583"
-                                placeholder="Team Member 13 Roll no." />
-                        </div>
-                        <div class="input_field members 13"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m13-dpt" type="text" name="entry.1900119410"
-                                placeholder="Team Member 13 Department" />
-                        </div>
-
-                        <div class="input_field members 14"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m14-name" type="text" name="entry.458524983" placeholder="Team Member 14 Name" />
-                        </div>
-                        <div class="input_field members 14"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m14-rollno" type="text" name="entry.4448592"
-                                placeholder="Team Member 14 Roll no." />
-                        </div>
-                        <div class="input_field members 14"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m14-dpt" type="text" name="entry.1334244619"
-                                placeholder="Team Member 14 Department" />
-                        </div>
-
-                        <div class="input_field members 15"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m15-name" type="text" name="entry.1577026045"
-                                placeholder="Team Member 15 Name" />
-                        </div>
-                        <div class="input_field members 15"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m15-rollno" type="text" name="entry.682393550"
-                                placeholder="Team Member 15 Roll no." />
-                        </div>
-                        <div class="input_field members 15"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                            <input id="m15-dpt" type="text" name="entry.1102884159"
-                                placeholder="Team Member 15 Department" />
-                        </div>
 
 
 
-
-
-                        
-                        <div  class="input_field checkbox_option">
-                            <input type="checkbox" id="cb1"required>
-                            <label for="cb1">I agree that there are not more than 4 C2S2 Panache Members in our
-                                Team</label>
+                        <div class="members 1">
+                            <label for="m1-name">Your Name</label>
+                            <div class="input_field">
+                                <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input id="m1-name" type="text" name="name1"
+                                    placeholder="Enter Your Name" />
+                            </div>
+                            <label for="m1-rn">Your Roll No.</label>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input id="m1-rollno" type="text" name="r1"
+                                    placeholder="Enter Your Roll no." />
+                            </div>
+                            <label for="m1-dept">Your Department</label>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input id="m1-dpt" type="text" name="dpt1"
+                                    placeholder="Enter Your Department" />
+                            </div>
                         </div>
-
-                        <br>
-
-                        <div class="input_field checkbox_option">
-                            <input type="checkbox" id="cb2" required>
-                            <label for="cb2">I agree that all individuals are part of one team only(An individual can
-                                participate in only one team for the same event).</label>
-                        </div>
-
-                        <div class="input_field checkbox_option">
-                            <input type="checkbox" id="cb3" required>
-                            <label for="cb3">I accept that I have read all the rules and regulations from the Rulebook.</label>
-                        </div>
-                        
+      
+                            <div  class="input_field checkbox_option">
+                                <input type="checkbox" id="cb1"required>
+                                <label for="cb1">I accept that I have read all the rules and regulations from the Rulebook.</label>
+                            </div>
                         <input class="button" type="submit" value="Submit" />
                     </form>
                 </div>
@@ -292,314 +78,20 @@
         </div>
     </div>
     <script>
-        var script_url = "https://script.google.com/macros/s/AKfycbzjlNtS3pPvMl4yWbcbYWbkQ2pO0cQGg266BdyEWlxmzUCF6TyS/exec";
-        function insert_value() {
-            var team_name = $("#team-name").val();
-            var contact = $("#contact").val();
-            var altcontact = $("#alt-contact").val();
-            var campus = $("#campus").val();
-            var email = $("#email").val();
-            var altemail = $("#alt-email").val();
-            var campus = $("#campus option:selected").val();
-            var total = $("#no-of-team-members option:selected").val();
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzOrLsRleH_1tu3mfYbRITUINfgODgnTEAfRkxuNuJj7uMLS9JB/exec'
+        const form = document.forms['submit-to-google-sheet']
+        console.log(form);
 
-            var name1 = $("#m1-name").val();
-            var name2 = $("#m2-name").val();
-            var name3 = $("#m3-name").val();
-            var name4 = $("#m4-name").val();
-            var name5 = $("#m5-name").val();
-            var name6 = $("#m6-name").val();
-            var name7 = $("#m7-name").val();
-            var name8 = $("#m8-name").val();
-            var name9 = $("#m9-name").val();
-            var name10 = $("#m10-name").val();
-            var name11 = $("#m11-name").val();
-            var name12 = $("#m12-name").val();
-            var name13 = $("#m13-name").val();
-            var name14 = $("#m14-name").val();
-            var name15 = $("#m15-name").val();
-
-            var id1 = $("#m1-rollno").val();
-            var id2 = $("#m2-rollno").val();
-            var id3 = $("#m3-rollno").val();
-            var id4 = $("#m4-rollno").val();
-            var id5 = $("#m5-rollno").val();
-            var id6 = $("#m6-rollno").val();
-            var id7 = $("#m7-rollno").val();
-            var id8 = $("#m8-rollno").val();
-            var id9 = $("#m9-rollno").val();
-            var id10 = $("#m10-rollno").val();
-            var id11 = $("#m11-rollno").val();
-            var id12 = $("#m12-rollno").val();
-            var id13 = $("#m13-rollno").val();
-            var id14 = $("#m14-rollno").val();
-            var id15 = $("#m15-rollno").val();
-
-            var dpt1 = $("#m1-dpt").val();
-            var dpt2 = $("#m2-dpt").val();
-            var dpt3 = $("#m3-dpt").val();
-            var dpt4 = $("#m4-dpt").val();
-            var dpt5 = $("#m5-dpt").val();
-            var dpt6 = $("#m6-dpt").val();
-            var dpt7 = $("#m7-dpt").val();
-            var dpt8 = $("#m8-dpt").val();
-            var dpt9 = $("#m9-dpt").val();
-            var dpt10 = $("#m10-dpt").val();
-            var dpt11 = $("#m11-dpt").val();
-            var dpt12 = $("#m12-dpt").val();
-            var dpt13 = $("#m13-dpt").val();
-            var dpt14 = $("#m14-dpt").val();
-            var dpt15 = $("#m15-dpt").val();
-            var url = script_url + "?callback=ctrlq" + "&team_name="+team_name +"&email="+email+"&contact=" + contact + "&alt_contact=" + altcontact +"&campus=" + campus +"&email=" + email +"&alt_email=" + altemail +"&no_of_members=" + total + 
-            
-                "&name1= " + name1 +
-                "&name2= " + name2 +
-                "&name3= " + name3 +
-                "&name4= " + name4 +
-                "&name5= " + name5 +
-                "&name6= " + name6 +
-                "&name7= " + name7 +
-                "&name8= " + name8 +
-                "&name9= " + name9 +
-                "&name10=" + name10 +
-                "&name11=" + name11 +
-                "&name12=" + name12 +
-                "&name13=" + name13 +
-                "&name14=" + name14 +
-                "&name15=" + name15 +
-
-               "&m1_rn=" + id1 +
-                "&m2_rn=" + id2 +
-                "&m3_rn=" + id3 +
-                "&m4_rn=" + id4 +
-                "&m5_rn=" + id5 +
-                "&m6_rn=" + id6 +
-                "&m7_rn=" + id7 +
-                "&m8_rn=" + id8 +
-                "&m9_rn=" + id9 +
-                "&m10_rn=" + id10 +
-                "&m11_rn=" + id11 +
-                "&m12_rn=" + id12 +
-                "&m13_rn=" + id13 +
-                "&m14_rn=" + id14 +
-                "&m15_rn=" + id15 +
-
-                "&m1_dpt=" + dpt1 +
-                "&m2_dpt=" + dpt2 +
-                "&m3_dpt=" + dpt3 +
-                "&m4_dpt=" + dpt4 +
-                "&m5_dpt=" + dpt5 +
-                "&m6_dpt=" + dpt6 +
-                "&m7_dpt=" + dpt7 +
-                "&m8_dpt=" + dpt8 +
-                "&m9_dpt=" + dpt9 +
-                "&m10_dpt=" + dpt10 +
-                "&m11_dpt=" + dpt11 +
-                "&m12_dpt=" + dpt12 +
-                "&m13_dpt=" + dpt13 +
-                "&m14_dpt=" + dpt14 +
-                "&m15_dpt=" + dpt15 +"&action=insert";
-
-               
-            var request = jQuery.ajax({
-                crossDomain: true,
-                url: url,
-                method: "GET",
-                dataType: "jsonp"
-            });
-            $("#resetForm").reset();
-        }
-        function ctrlq(e) {
-            alert('Congrats! Registered Successfully');
-        }
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert('Success!', response))
+                .catch(error => {
+                    alert('Error!', error.message)})
+        })
     </script>
 
-    <!--script>
-        function postToGoogle() {
-            var name1 = $("#m1-name").val();
-            var name2 = $("#m2-name").val();
-            var name3 = $("#m3-name").val();
-            var name4 = $("#m4-name").val();
-            var name5 = $("#m5-name").val();
-            var name6 = $("#m6-name").val();
-            var name7 = $("#m7-name").val();
-            var name8 = $("#m8-name").val();
-            var name9 = $("#m9-name").val();
-            var name10 = $("#m10-name").val();
-            var name11 = $("#m11-name").val();
-            var name12 = $("#m12-name").val();
-            var name13 = $("#m13-name").val();
-            var name14 = $("#m14-name").val();
-            var name15 = $("#m15-name").val();
 
-            var id1 = $("#m1-rollno").val();
-            var id2 = $("#m2-rollno").val();
-            var id3 = $("#m3-rollno").val();
-            var id4 = $("#m4-rollno").val();
-            var id5 = $("#m5-rollno").val();
-            var id6 = $("#m6-rollno").val();
-            var id7 = $("#m7-rollno").val();
-            var id8 = $("#m8-rollno").val();
-            var id9 = $("#m9-rollno").val();
-            var id10 = $("#m10-rollno").val();
-            var id11 = $("#m11-rollno").val();
-            var id12 = $("m12-rollno").val();
-            var id13 = $("m13-rollno").val();
-            var id14 = $("m14-rollno").val();
-            var id15 = $("m15-rollno").val();
-
-            var dpt1 = $("#m1-dpt").val();
-            var dpt2 = $("#m2-dpt").val();
-            var dpt3 = $("#m3-dpt").val();
-            var dpt4 = $("#m4-dpt").val();
-            var dpt5 = $("#m5-dpt").val();
-            var dpt6 = $("#m6-dpt").val();
-            var dpt7 = $("#m7-dpt").val();
-            var dpt8 = $("#m8-dpt").val();
-            var dpt9 = $("#m9-dpt").val();
-            var dpt10 = $("#m10-dpt").val();
-            var dpt11 = $("#m11-dpt").val();
-            var dpt12 = $("#m12-dpt").val();
-            var dpt13 = $("#m13-dpt").val();
-            var dpt14 = $("#m14-dpt").val();
-            var dpt15 = $("#m15-dpt").val();
-
-            var teamname = $("#team-name").val();
-            var contact = $("#contact").val();
-            var altcontact = $("#alt-contact").val();
-            var campus = $("#campus").val();
-            var email = $("#email").val();
-            var altemail = $("#alt-email").val();
-            var campus = $("#campus option:selected").val();
-            var totalTeamMembers = $("#no-of-team-members option:selected").val();
-
-
-
-            $.ajax({
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSfuze551miKIxZ5ZTe30YHuCj-c_YIuEct7tbCWj7FDwhW2aA/formResponse?",
-
-                data: {
-                    "entry.613238760":  name1,
-                    "entry.1765499000": name2,
-                    "entry.421915401 ": name3,
-                    "entry.238384897 ": name4,
-                    "entry.449731777 ": name5,
-                    "entry.368721261 ": name6,
-                    "entry.756223716 ": name7,
-                    "entry.1510788210": name8,
-                    "entry.1779243550": name9,
-                    "entry.1835198146": name10,
-                    "entry.204286534 ": name11,
-                    "entry.1561400224": name12,
-                    "entry.1644871524": name13,
-                    "entry.458524983 ": name14,
-                    "entry.1577026045": name15,
-                    "entry.1971213482": id1,
-                    "entry.317500558":  id2,
-                    "entry.255286181":  id3,
-                    "entry.830531234":  id4,
-                    "entry.588278723":  id5,
-                    "entry.1107098433": id6,
-                    "entry.1164239496": id7,
-                    "entry.1933507263": id8,
-                    "entry.1140584021": id9,
-                    "entry.1420664447": id10,
-                    "entry.1206521894": id11,
-                    "entry.128115850": id12,
-                    "entry.103309583": id13,
-                    "entry.4448592": id14,
-                    "entry.682393550": id15,
-                    "entry.1882408950": dpt1,
-                    "entry.1531743080": dpt2,
-                    "entry.260135115 ": dpt3,
-                    "entry.537772478 ": dpt4,
-                    "entry.640788099 ": dpt5,
-                    "entry.1746511865": dpt6,
-                    "entry.2013559282": dpt7,
-                    "entry.193940571 ": dpt8,
-                    "entry.1641125332": dpt9,
-                    "entry.1135331566": dpt10,
-                    "entry.1913470120": dpt11,
-                    "entry.645955763 ": dpt12,
-                    "entry.1900119410": dpt13,
-                    "entry.1334244619": dpt14,
-                    "entry.1102884159": dpt15,
-                    "entry.458886515": teamname,
-                    "entry.1364177993": email,
-                    "entry.1037374773": altemail,
-                    "entry.2141696433": contact,
-                    "entry.1819163531": altcontact,
-                    "entry.879325493": campus,
-                    "entry.2033745196": totalTeamMembers
-                },
-                type: "POST",
-                dataType: "xml",
-                success: function (d) {
-                },
-                error: function (x, y, z) {
-                    $('#success-msg').show();
-                    $('#form').hide();
-                }
-            });
-            return false;
-        }
-    </script-->
 </body>
 
 </html>
-
-<!--entry.458886515 -teamname
-entry.1364177993 -email
-entry.1037374773 -contact 
-entry.1819163531 -alt contact 
-entry.879325493 -campus 
-entry.2033745196 -no of team mem 
-
-
-name1   -entry.613238760
-name2   -entry.1765499000
-name3   -entry.421915401
-name4   -entry.238384897
-name5   -entry.449731777
-name6   -entry.368721261
-name7   -entry.756223716
-name8   -entry.1510788210
-name9   -entry.1779243550
-name10  -entry.1835198146
-name11  -entry.204286534
-name12  -entry.1561400224
-name13  -entry.1644871524
-name14  -entry.458524983
-name15  -entry.1577026045
-
-id1 = entry.1971213482
-id2 = entry.317500558
-id3 = entry.255286181
-id4 = entry.830531234
-id5 = entry.588278723
-id6 = entry.1107098433
-id7 = entry.1164239496
-id8 = entry.1933507263
-id9 = entry.1140584021
-id10 =entry.1420664447
-id11 =entry.1206521894
-id12= entry.128115850
-id13= entry.103309583
-id14= entry.4448592
-id15= entry.682393550
-
-dpt1 = entry.1882408950
-dpt2 = entry.1531743080
-dpt3 = entry.260135115
-dpt4 = entry.537772478
-dpt5 = entry.640788099
-dpt6 = entry.1746511865
-dpt7 = entry.2013559282
-dpt8 = entry.193940571
-dpt9 = entry.1641125332
-dpt10 =entry.1135331566
-dpt11 =entry.1913470120
-dpt12= entry.645955763
-dpt13= entry.1900119410
-dpt14= entry.1334244619
-dpt15= entry.1102884159-->
